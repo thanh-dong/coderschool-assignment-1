@@ -40,13 +40,13 @@ The following **required** functionality is complete:
 
 The following **additional** features are implemented:
 
-- [ ] User can search for food
+- [x] User can search for food
 
 ## Video Walkthrough 
 
 Here's a walkthrough of implemented user stories:
 
-![Video Walkthrough](http://i.imgur.com/link/to/your/gif/file.gif)
+![Video Walkthrough](http://imgur.com/9Go1smf)
 
 
 ## Notes
