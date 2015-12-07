@@ -1,0 +1,40 @@
+<%= form_for(@order) do |f| %>
+  <% if @order.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
+
+      <ul>
+      <% @order.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label "Please fill your name" %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label "Please fill your address" %><br>
+    <%= f.text_area :address %>
+  </div>
+  <div class="field">
+    <%= f.label "Please fill your phone number" %><br>
+    <%= f.text_field :phone %>
+  </div>
+
+  <div class="field">
+    <%= f.label "The delivery cost would be 20000 VND" %><br>
+    <%= f.hidden_field :ship_cost, :value => 20000%>
+  </div>
+  <div class="field">
+    <%= f.label "Total: " + (params[:price].to_i + 20000).to_s + 'VND'%><br>
+    <%= f.hidden_field :total_cost, :value => (params[:price].to_i + 20000) %>
+  </div>
+  <%= f.hidden_field :discount, :value => 0%>
+  <%= f.hidden_field :food_id, :value => params[:food]%>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

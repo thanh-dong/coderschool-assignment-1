@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Restaurant</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<nav class="navbar navbar-light bg-faded">
+  <%=link_to 'Home', root_path %>
+  <%=link_to 'Orders', {controller: 'orders', action: 'index'}, class: 'pull-right' %>
+</nav>
+
+
+<div class="container-fluid content">
+  <%= yield %>
+</div>
+</body>
+</html>

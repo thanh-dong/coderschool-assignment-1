@@ -1,0 +1,13 @@
+<%= form_tag '/menus', method: :get, class: "form-inline" do %>
+  <%= text_field_tag :search_string,"",class: "form-control", placeholder: "Search" %>
+  <%= hidden_field_tag :search, 'search' %>
+  <%= submit_tag("Search", class: "btn btn-success-outline")%>
+<% end %>
+
+<div class="menu-content">
+<% @food.each do |food| %>
+<div class="col-sm-5">
+  <%= render food, options: {order: true}%>
+</div>
+<% end %>
+</div>

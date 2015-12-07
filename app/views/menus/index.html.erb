@@ -1,0 +1,19 @@
+<h2>Today menu</h2>
+
+<div class="container col-sm-2 pull-left">
+  <div class="nav nav-pills nav-stacked">
+    <%= render @menus %>
+    <div class="break-line">
+        <%=link_to 'Search', {controller: 'menus', action: 'index', search: 'search'}, class: 'btn btn-secondary btn-block'%>
+  </div>
+  </div>
+</div>
+<div class="col-sm-10 menu-content pull-right">
+  <div class="content">
+    <% if @search != 'search' %>
+      <%=render 'food_list'%>
+    <% else %>
+      <%=render 'search'%>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+Sort by:
+<div class="btn-group" role="group">
+  <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Name
+  </button>
+  <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+    <%=link_to 'A-Z order', {controller: 'menus', action: 'index', query: @current_menu, sort: 'name ASC'}, class: 'dropdown-item'%>
+    <%=link_to 'Z-A order', {controller: 'menus', action: 'index', query: @current_menu, sort: 'name DESC'}, class: 'dropdown-item'%>
+  </div>
+</div>
+<div class="btn-group" role="group">
+  <button id="btnGroupDrop2" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Price
+  </button>
+  <div class="dropdown-menu" aria-labelledby="btnGroupDrop2">
+    <%=link_to 'Lowest first', {controller: 'menus', action: 'index', query: @current_menu, sort: 'price ASC'}, class: 'dropdown-item'%>
+    <%=link_to 'Highest first', {controller: 'menus', action: 'index', query: @current_menu, sort: 'price DESC'}, class: 'dropdown-item'%>
+  </div>
+</div>
+</div>
+<div class="menu-content">
+<% @food.each do |food| %>
+<div class="col-sm-5">
+  <%= render food, options: {order: true}%>
+</div>
+<% end %>

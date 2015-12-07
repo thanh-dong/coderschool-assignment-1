@@ -1,0 +1,16 @@
+<div class="card">
+  <img class="card-img-top" src="<%= food.img %>">
+  <div class="card-block">
+    <h4 class="card-title"><%= food.name %></h4>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item"><%= food.description %></li>
+      <li class="list-group-item">
+        <span class="label label-default pull-right"><%= food.price %> VND</span>
+        Price:
+      </li>
+    </ul>
+    <div class="card-footer text-center">
+      <%= link_to 'Order', {controller: "orders", action: "new", food: food.id, food_name:food.name, price:food.price }, class:"btn btn-primary" if options[:order] %>
+    </div>
+  </div>
+</div>
