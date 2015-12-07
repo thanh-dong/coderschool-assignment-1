@@ -6,7 +6,8 @@ Submitted by: **thanh-dong**
 
 Time spent: **10** hours spent in total
 
-URL: **Insert your Heroku URL here**
+URL: **https://young-retreat-3813.herokuapp.com/**
+**DONT KNOW WHY APP DOES NOT WORK ON HEROKU**
 
 ## User Stories
 
