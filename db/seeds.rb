@@ -5,11 +5,14 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+Order.delete_all
+Food.delete_all
+Menu.delete_all
 
 Menu.create(name: "Breakfast", description: "breakfast")
 Menu.create(name: "Lunch", description: "lunch")
 Menu.create(name: "Dinner", description: "dinner")
-Menu.create(name: "Specials", description: "db")
+Menu.create(name: "Drinks", description: "drinks")
 
 Menu.all.each do |m|
     m.foods << Food.new(name: "Com Tam", description: "Vietnamese rice with pork", price: 50000,img: "http://loremflickr.com/320/240/comtam")
