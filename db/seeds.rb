@@ -5,9 +5,6 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-Order.delete_all
-Food.delete_all
-Menu.delete_all
 
 Menu.create(name: "Breakfast", description: "breakfast")
 Menu.create(name: "Lunch", description: "lunch")
